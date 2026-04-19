@@ -28,6 +28,9 @@ app.use((err, req, res, next) => {
   console.error(err.stack)
   res.status(500).json({ error: err.message || 'Error interno del servidor' })
 })
+app.get('/', (req, res) => {
+  res.send('API funcionando ');
+});
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`)
